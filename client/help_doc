@@ -1,12 +1,23 @@
 这些是各种场合常见的 Myrsh 命令：
-	add			添加命令至本机缓存区
+	add		添加命令至本机缓存区
 		用法 ./Myrsh add <command>
-	romove 		从本机缓存区删除命令
-		用法 ./Myrsh remove <command>
-			./Myrsh remove <tid>
+			./Myrsh add -f <xxx.sh>
+	remove 	从本机缓存区删除命令
+		用法 ./Myrsh remove <tid>
 	commit		将命令提交至服务器
 		用法 ./Myrsh commit 
-	status		查看本机和服务器的任务状态
+	status	查看本机缓存区的任务
 		用法 ./Myrsh status
-	help		查看Myrsh帮助
+			./Myrsh status -l
+	sstatus	查看服务器的任务 
+		用法 ./Myrsh status
+			./Myrsh status -l
+	update 将服务器运算的结果更新到本机
+		用法 ./Myrsh update
+	log 	查看最近完成的任务详情
+		用法 ./Myrsh log
+			./Myrsh log -l
+	query 	查看任务详情
+		用法 ./Myrsh query <tid>
+	help	查看Myrsh帮助
 		用法 ./Myrsh help
