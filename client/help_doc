@@ -4,6 +4,8 @@
 			./Myrsh add -f <xxx.sh>
 	remove 	从本机缓存区删除命令
 		用法 ./Myrsh remove <tid>
+	sremove 从服务器删除命令
+		用法 ./Myrsh sremove <tid>
 	commit		将命令提交至服务器
 		用法 ./Myrsh commit 
 	status	查看本机缓存区的任务

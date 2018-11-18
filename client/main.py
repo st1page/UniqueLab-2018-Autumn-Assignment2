@@ -62,7 +62,18 @@ def main():
 			tid = int(sys.argv[2]);
 			task = LocalManager.get(tid);
 			if(task==None): task = NetManager.get(tid);
-			task.output();
+			if(task==None): print('任务不存在！检查tid');
+			else :task.output();
+	elif sys.argv[1]=='update':
+		NetManager.update_done();
+	elif sys.argv[1]=='sremove':
+		if len(sys.argv)!=3: 
+			print('输入一个tid\n./Myrsh sremove <tid>');
+		elif not sys.argv[2].isdecimal(): 
+			print('tid是一串数字');
+		else :
+			tid = int(sys.argv[2]);
+			flag = NetManager.remove(tid);
+			if flag == 'False' : print('任务不存在！');
 	else: print('Myrsh：{0} 不是一个 Myrsh 命令。参见 ./Myrsh help '.format(sys.argv[1]));	
-
 main()		
